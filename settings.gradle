@@ -62,3 +62,9 @@ modules.each { dir ->
   include "modules:$dir.name"
   project(":modules:$dir.name").projectDir = dir
 }
+
+
+include "modules:axelor-open-suite:axelor-auth-oidc"
+
+project(":modules:axelor-open-suite:axelor-auth-oidc").projectDir =
+        file("modules/axelor-open-suite/axelor-auth-oidc")
