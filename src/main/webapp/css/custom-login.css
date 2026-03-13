@@ -1,0 +1,22 @@
+.btn-keycloak {
+  background-color: #4d4d4d;
+  color: #fff;
+  font-weight: 500;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-keycloak::before {
+  content: "";
+  display: inline-block;
+
+  width: 18px;
+  height: 18px;
+
+  background-image: url("/axelor-erp/img/keycloak-logo.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}

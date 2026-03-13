@@ -1,0 +1,40 @@
+plugins {
+    id 'com.axelor.app'
+}
+
+group = 'com.axelor.apps'
+version = '8.5.7'
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://repository.axelor.com/nexus/repository/maven-public/'
+    }
+}
+
+axelor {
+    title "My Auth OIDC"
+    description "Custom OIDC authentication module"
+}
+
+dependencies {
+    // БАЗОВАЯ auth-инфраструктура Axelor
+    implementation 'org.pac4j:pac4j-http:5.7.0'
+
+    implementation 'org.pac4j:pac4j-core:5.7.0'
+    implementation 'org.pac4j:pac4j-oidc:5.7.0'
+
+    compileOnly "org.keycloak:keycloak-server-spi:26.4.7"
+    compileOnly "org.keycloak:keycloak-server-spi-private:26.4.7"
+
+    compileOnly "org.pac4j:pac4j-oidc:5.7.0"
+    runtimeOnly "org.pac4j:pac4j-oidc:5.7.0"
+
+    compileOnly "org.pac4j:pac4j-javaee:5.7.0"
+    runtimeOnly "org.pac4j:pac4j-javaee:5.7.0"
+
+}
+
+test {
+    useJUnitPlatform()
+}
